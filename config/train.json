@@ -1,0 +1,20 @@
+{
+  "__my_model__": "example model",
+  "my_model": {
+    "y_col":  "spend",
+    "features": [
+      { "name": "price"},
+      { "name": "timestamp",
+        "action": "timestamp_2_weekday_hour_dummifier"},
+      { "name": "region", "action": "dummifier"},
+      { "name": "browser", "action": "browser"},
+      { "name": "os", "action": "os"},
+      { "name": "btype", "action": "keywords_checker",
+        "parameters": {"keywords": ["1", "4"]}},
+      { "name": "last_purchase_ts", "action": "recency",
+        "parameters": {"timestamp1": "int last_purchase_ts", "timestamp2": "int timestamp",
+        "predictor_name": "purchase_recency"}}
+    ],
+    "memo": "example"
+  }
+}
